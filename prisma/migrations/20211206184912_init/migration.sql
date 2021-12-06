@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "role_type" AS ENUM ('user', 'moderator', 'admin');
+CREATE TYPE "role_type" AS ENUM ('client', 'manager', 'admin');
 
 -- CreateTable
 CREATE TABLE "categories" (
@@ -57,7 +57,7 @@ CREATE TABLE "users" (
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "is_public_email" BOOLEAN NOT NULL DEFAULT true,
     "is_verified" BOOLEAN NOT NULL DEFAULT false,
-    "role" "role_type" NOT NULL DEFAULT E'user',
+    "role" "role_type" NOT NULL DEFAULT E'client',
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
